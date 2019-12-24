@@ -1,0 +1,14 @@
+diff --git a/vendor/magento/module-google-tag-manager/Block/ListJson.php b/vendor/magento/module-google-tag-manager/Block/ListJson.php
+index 7d1cd51f..21938984 100644
+--- a/vendor/magento/module-google-tag-manager/Block/ListJson.php
++++ b/vendor/magento/module-google-tag-manager/Block/ListJson.php
+@@ -199,6 +199,9 @@ class ListJson extends \Magento\Framework\View\Element\Template
+      */
+     protected function _getProductCollection()
+     {
++        if(!$this->getListBlock()) { // To check list block exist or not if not then return null
++            return null;
++        }
+         /* For catalog list and search results
+          * Expects getListBlock as \Magento\Catalog\Block\Product\ListProduct
+          */
